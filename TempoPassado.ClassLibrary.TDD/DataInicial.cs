@@ -7,6 +7,7 @@ namespace TempoPassado.ClassLibrary.TDD
         public string ManipularData(DateTime data)
         {
             DateTime dataAgora = new DateTime(2021, 05, 26, 18, 00, 00);
+
             string tempoPassado = "";
 
             if (data > dataAgora)

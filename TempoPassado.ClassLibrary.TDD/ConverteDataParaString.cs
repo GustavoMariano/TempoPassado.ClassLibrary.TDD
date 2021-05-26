@@ -31,7 +31,7 @@
             }
         }
 
-        public string Semanas(int dia)
+        public string SemanasHoras(int dia)
         {
             switch (dia)
             {
@@ -43,57 +43,54 @@
             }
         }
 
-        public string HorasMaisQueDezenove(int hora)
-        {
-            if (hora == 20)
-                return "vinte";
-            else
-            {
-                string strRetornar = "";
-                int unidadeHora = hora - 20;
-
-                strRetornar = "vinte e " + DiasMesesAnosETempo(unidadeHora);
-
-                return strRetornar;
-            }
-        }
-
         public string MinutosESegundos(int valor)
         {
             string strRetornar = "";
             int unidadeHora = 0;
 
-            switch (valor)
-            {
-                case 20: return "vinte";
-                case 30: return "trinta";
-                case 40: return "quarenta";
-                case 50: return "cinquenta";
-                default: return "";
-            }
+            if (valor == 20)
+                strRetornar += "vinte";
+            if (valor == 30)
+                strRetornar += "trinta";
+            if (valor == 40)
+                strRetornar += "quarenta";
+            if (valor == 50)
+                strRetornar += "cinquenta";
 
             if (valor > 20 && valor < 30)
             {
                 unidadeHora = valor - 20;
-                strRetornar = "vinte e " + DiasMesesAnosETempo(unidadeHora);
+                if (valor == 1 || valor == 2)
+                    strRetornar += "vinte e " + SemanasHoras(unidadeHora);
+                else
+                    strRetornar += "vinte e " + DiasMesesAnosETempo(unidadeHora);
             }
 
             if (valor > 30 && valor < 40)
             {
                 unidadeHora = valor - 30;
-                strRetornar = "trinta e " + DiasMesesAnosETempo(unidadeHora);
+                if (valor == 1 || valor == 2)
+                    strRetornar += "trinta e " + SemanasHoras(unidadeHora);
+                else
+                    strRetornar += "trinta e " + DiasMesesAnosETempo(unidadeHora);
             }
 
             if (valor > 40 && valor < 50)
             {
                 unidadeHora = valor - 40;
-                strRetornar = "quarenta e " + DiasMesesAnosETempo(unidadeHora);
+                if (valor == 1 || valor == 2)
+                    strRetornar += "quarenta e " + SemanasHoras(unidadeHora);
+                else
+                    strRetornar += "quarenta e " + DiasMesesAnosETempo(unidadeHora);
             }
 
             if (valor > 50 && valor < 60)
             {
                 unidadeHora = valor - 50;
-                strRetornar = "cinquenta e " + DiasMesesAnosETempo(unidadeHora);
+                if (valor == 1 || valor == 2)
+                    strRetornar += "cinquenta e " + SemanasHoras(unidadeHora);
+                else
+                    strRetornar += "cinquenta e " + DiasMesesAnosETempo(unidadeHora);
             }
 
             return strRetornar;
