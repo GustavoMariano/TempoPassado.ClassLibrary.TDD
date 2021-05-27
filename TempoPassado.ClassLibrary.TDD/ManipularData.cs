@@ -76,16 +76,14 @@ namespace TempoPassado.ClassLibrary.TDD
                     }
                 }
                 if (semana)
-                {
                     strDataPassada += converteDataParaString.DiasMesesAnosETempo(dias) + " dias ";
-                }
                 else
                     strDataPassada += converteDataParaString.DiasMesesAnosETempo(dias) + " dias ";
 
                 dia = true;
             }
 
-            if (horas != 0 || minutos > 0 || segundos != 0)
+            if ((horas > 0 || minutos > 0 || segundos > 0) && (!ano && !mes && !dia))
             {
                 if((ano || mes || dia) && (horas != 0 || minutos != 0 || segundos != 0))
                     strDataPassada += "e ";

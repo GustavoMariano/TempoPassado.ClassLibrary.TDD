@@ -96,14 +96,5 @@ namespace TempoPassado.Tests
 
             Assert.AreEqual("duas semanas atrás", dataInicial.ManipularData(data));
         }
-
-        [TestMethod]
-        public void DeveRetornarDoisAnosETresMesesEDuasSemanasEDoisDiaEQuatroHorasETrintaEDoisMinutosECinquentaCegundosAtras()//AnosMesesSemanasDiasHorasMinutosSegundos
-        {
-            DateTime data = new DateTime(2019, 03, 10, 03, 28, 10);
-            DataInicial dataInicial = new DataInicial();
-
-            Assert.AreEqual("dois anos e dois meses e duas semanas e dois dias e quatorze horas e trinta e um minutos e cinquenta segundos atrás", dataInicial.ManipularData(data));
-        }
     }
 }
